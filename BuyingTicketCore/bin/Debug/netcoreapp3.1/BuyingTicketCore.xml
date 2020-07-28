@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BuyingTicketCore</name>
+    </assembly>
+    <members>
+        <member name="M:BuyingTicketCore.Controllers.SessionModelsController.GetSessions">
+            <summary>
+             Получить все сеансы
+            </summary>
+             <remarks>
+             Sample request:
+            
+                 GET /
+             </remarks>
+             <returns>Все сеансы</returns>
+             <response code="200">Все сеансы</response>
+        </member>
+        <member name="M:BuyingTicketCore.Controllers.SessionModelsController.PutSessionModel(System.String,BuyingTicketCore.Models.SessionModel)">
+            <summary>
+             Обновить сеанс
+            </summary>
+             <remarks>
+             Sample request:
+            
+                 GET /
+             </remarks>
+             <returns>Текущий сеанс</returns>
+             <response code="200">Текущий сеанс</response>
+             <response code="400">Не найден текущий id</response>
+             <response code="404">Ошибка обновления бд</response>
+        </member>
+        <member name="M:BuyingTicketCore.Controllers.SessionModelsController.PostSessionModel(BuyingTicketCore.Models.SessionModelView)">
+            <summary>
+             Создать сеанс
+            </summary>
+             <remarks>
+             Sample request:
+            
+                 Post /Create
+             </remarks>
+             <returns>Текущий сеанс</returns>
+             <response code="200">Текущий сеанс</response>
+             <response code="400">Не найден текущий id</response>
+             <response code="404">Ошибка обновления бд</response>
+        </member>
+        <member name="M:BuyingTicketCore.Controllers.TicketController.GetTickets">
+            <summary>
+             Получение всех купленных билетов
+            </summary>
+             <remarks>
+             Sample request:
+            
+                 GET /
+             </remarks>
+             <returns>Купленные билеты</returns>
+             <response code="200">Купленные билеты</response>
+        </member>
+        <member name="M:BuyingTicketCore.Controllers.TicketController.PostTicketModel(BuyingTicketCore.Models.TicketModelView)">
+            <summary>
+             Купить новый купленный билет
+            </summary>
+             <remarks>
+             Sample request:
+                 Post /
+             </remarks>
+             <returns>Купить билет</returns>
+             <response code="200">Возвращается текущий билет</response>
+             <response code="400">Ошибка заполнения данных</response>  
+             <response code="406">Не хватает кол-во мест</response>  
+        </member>
+        <member name="M:BuyingTicketCore.Controllers.TicketController.DeleteTicketModel(System.String)">
+            <summary>
+             Удалить купленные билеты
+            </summary>
+             <remarks>
+             Sample request:
+                 Post /Delete/{id}
+             </remarks>
+             <returns>Возвращается удаленный билет</returns>
+             <response code="200">Возвращается текущий билет</response>
+             <response code="404">Если такой билет не найден при удалении</response>  
+        </member>
+    </members>
+</doc>

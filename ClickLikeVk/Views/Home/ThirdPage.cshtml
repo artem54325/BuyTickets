@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+    <div class="text-center">
+        <h1 class="display-4">Welcome</h1>
+        <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+        <div id="vk_share_button" ></div>
+
+        <!-- Put this script tag to the place, where the Share button will be -->
+        <script type="text/javascript">
+            document.getElementById('vk_share_button').innerHTML = VK.Share.button('http://mysite.com', { type: 'link' });
+            $('#vk_share_button').click(function () {
+                click('3')
+            })
+        </script>
+    </div>

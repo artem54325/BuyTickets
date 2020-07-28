@@ -1,0 +1,35 @@
+﻿<Window x:Class="UserApplication.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UserApplication.Views"
+        mc:Ignorable="d"
+        Title="Buying tickets" Height="492" Width="904"
+        xmlns:prism="http://prismlibrary.com/"
+        ResizeMode="NoResize"
+        prism:ViewModelLocator.AutoWireViewModel="True">
+    <Grid>
+        <!--<GroupBox x:Name="groupBox" Header="Ссылка" Height="50" VerticalAlignment="Top" Margin="5,0,5,0">
+            <Grid Height="25">
+                <TextBox Margin="0,0,123,0" Text="{Binding Link}"/>
+                <Button x:Name="button_change_link" Command="{Binding ChangeUrlCommand}" Content="Изменить ссылку" Margin="0,0,5,0" VerticalAlignment="Center" Height="23" Background="Orange" HorizontalAlignment="Right" Width="104"/>
+            </Grid>
+        </GroupBox>-->
+
+        <Button x:Name="button_add_session" Command="{Binding AddSessionCommand}" Content="Добавить сеанс" Margin="0,0,10,10" Background="Green" HorizontalAlignment="Right" Width="92" Height="25" VerticalAlignment="Bottom"/>
+        <Button x:Name="button_update_session" Command="{Binding UpdateCommand}" Content="Обновить сеансы" Margin="0,0,107,10" Background="Orange" HorizontalAlignment="Right" Width="103" Height="25" VerticalAlignment="Bottom"/>
+        <GroupBox x:Name="groupBox1" Header="Сеансы" Margin="5,5,5,40" >
+            <DataGrid x:Name="dataGrid" IsReadOnly="True" SelectedItem="{Binding SelectSession}" AutoGenerateColumns="False" ItemsSource="{Binding Path=Sessions, Mode=Default, UpdateSourceTrigger=Default}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Картинка" Binding="{Binding Img}"/>
+                    <DataGridTextColumn Header="Название фильма" Binding="{Binding NameFilm}"/>
+                    <DataGridTextColumn Header="Начало фильма" Binding="{Binding StartFilm}"/>
+                    <DataGridTextColumn Header="Цена билета" Binding="{Binding PriceTicket}"/>
+                    <DataGridTextColumn Header="Зал" Binding="{Binding Room}"/>
+                    <DataGridTextColumn Header="Кол-во мест" Binding="{Binding FreeSeats}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </GroupBox>
+    </Grid>
+</Window>
